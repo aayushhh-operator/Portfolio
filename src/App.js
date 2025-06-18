@@ -70,7 +70,7 @@ function App() {
             <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About Me</a></li>
             <li><a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a></li>
             <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
-            <li><a href="#resume" onClick={(e) => scrollToSection(e, 'resume')}>Resume</a></li>
+            <li><a href="https://drive.google.com/file/d/1T4tKKTA4FhzKv2WLEtF30TkhGvsg4gFn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a></li>
           </ul>
         </nav>
       </header>
