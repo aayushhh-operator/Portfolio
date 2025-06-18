@@ -746,7 +746,7 @@ section {
 }
 
 .card-back p {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: sans-serif;
   color: #e2e8f0;
   font-size: 1.1rem;
   line-height: 1.8;
@@ -824,7 +824,7 @@ section {
 }
 
 .card-front h3 {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: sans-serif;
   color: #e2e8f0;
   font-size: 1.5rem;
   text-shadow: 0 0 10px rgba(99, 0, 168, 0.5);
@@ -882,7 +882,7 @@ section {
 }
 
 .resume-btn {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: sans-serif;
   font-size: 1.2rem;
   color: #e2e8f0;
   background: transparent;
