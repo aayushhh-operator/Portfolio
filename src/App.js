@@ -336,20 +336,6 @@ function App() {
           </div>
         </section>
 
-        <section id="resume" className="resume">
-          <ShinyText text="Resume" speed={4} />
-          <div className="resume-container">
-            <a 
-              href="https://drive.google.com/file/d/1T4tKKTA4FhzKv2WLEtF30TkhGvsg4gFn/view?usp=drive_link" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="resume-btn"
-            >
-              View Resume
-            </a>
-          </div>
-        </section>
-
         <section id="contact" className="contact">
           <ShinyText text="Get in Touch" speed={4} />
             <div className="contact-info">
