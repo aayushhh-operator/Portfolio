@@ -221,7 +221,7 @@ section {
 }
 
 .contact-info p {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: 'Panthera', sans-serif;
   color: #b5b5b5;
   font-size: 1rem;
   line-height: 1.6;
@@ -314,7 +314,7 @@ section {
 }
 
 .hero-content .description {
-  font-family: 'WakandaPanther';
+  font-family: 'Panthera';
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 0.9);
   margin: 1.5rem 0;
@@ -356,7 +356,7 @@ section {
   background: transparent;
   border: 2px solid #6300a8;
   color: white;
-  font-family: 'WakandaPanther';
+  font-family: 'Panthera';
   font-size: 1.2rem;
   text-decoration: none;
   border-radius: 30px;
@@ -461,7 +461,7 @@ section {
 }
 
 .about-text p {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: sans-serif;
   color: #e2e8f0;
   font-size: 1.1rem;
   line-height: 1.8;
@@ -554,7 +554,7 @@ section {
 }
 
 .skill-category h3 {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: sans-serif;
   color: #e2e8f0;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
@@ -647,7 +647,7 @@ section {
 }
 
 .skill-item span {
-  font-family: 'WakandaPanther', sans-serif;
+  font-family: sans-serif;
   color: #e2e8f0;
   font-size: 0.9rem;
   text-align: center;
