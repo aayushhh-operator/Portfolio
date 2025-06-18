@@ -868,7 +868,7 @@ section {
 }
 
 .resume {
-  padding: 4rem 2rem;
+  padding: 0.2rem;
   position: relative;
   overflow: hidden;
 }
@@ -877,8 +877,8 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 300px;
-  padding: 2rem;
+  min-height: 30px;
+  padding: 0.2rem;
 }
 
 .resume-btn {
