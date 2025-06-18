@@ -554,7 +554,7 @@ section {
 
 .skill-category h3 {
   font-family: sans-serif;
-  align-items: center;
+  text-align: center;
   color: #e2e8f0;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
