@@ -305,7 +305,6 @@ function App() {
                 <div className="card-back">
                   <p>AI Driven Counterfeit Artifact Detection and 3D Reconstruction of Broken Artifacts
                   Application</p>
-                  <br></br>
                   <a className="links" href='https://github.com/aayushhh-operator/Artifact-Detector' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
@@ -318,7 +317,6 @@ function App() {
                 </div>
                 <div className="card-back">
                   <p>Early Identification of Financial Fraud in Small Businesses</p>
-                  <br></br>
                   <a className="links" href='https://github.com/chaahatsingh/Innovathon_Beaches' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
@@ -331,7 +329,6 @@ function App() {
                 </div>
                 <div className="card-back">
                   <p>AI Driven Similar Clothing Detection Application</p>
-                  <br></br>
                   <a className="links" href='https://github.com/aayushhh-operator/WardrobeMirror' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
