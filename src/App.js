@@ -292,7 +292,7 @@ function App() {
                 </div>
                 <div className="card-back">
                   <p>AI Driven Crop Disease Detector and Predictor</p>
-                  <a href='https://github.com/aayushhh-operator/Crop-Disease-Detector'>GitHub</a>
+                  <a className="links" href='https://github.com/aayushhh-operator/Crop-Disease-Detector' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>
@@ -305,7 +305,8 @@ function App() {
                 <div className="card-back">
                   <p>AI Driven Counterfeit Artifact Detection and 3D Reconstruction of Broken Artifacts
                   Application</p>
-                  <a href='https://github.com/aayushhh-operator/Artifact-Detector'>GitHub</a>
+                  <br></br>
+                  <a className="links" href='https://github.com/aayushhh-operator/Artifact-Detector' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>
@@ -317,7 +318,8 @@ function App() {
                 </div>
                 <div className="card-back">
                   <p>Early Identification of Financial Fraud in Small Businesses</p>
-                  <a href='https://github.com/chaahatsingh/Innovathon_Beaches'>GitHub</a>
+                  <br></br>
+                  <a className="links" href='https://github.com/chaahatsingh/Innovathon_Beaches' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>
@@ -329,7 +331,8 @@ function App() {
                 </div>
                 <div className="card-back">
                   <p>AI Driven Similar Clothing Detection Application</p>
-                  <a href='https://github.com/aayushhh-operator/WardrobeMirror'>GitHub</a>
+                  <br></br>
+                  <a className="links" href='https://github.com/aayushhh-operator/WardrobeMirror' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>
@@ -353,25 +356,23 @@ function App() {
         <section id="contact" className="contact">
           <ShinyText text="Get in Touch" speed={4} />
             <div className="contact-info">
-              <h3>Contact Information</h3>
-              <p>Feel free to reach out through any of these channels.</p>
               <div className="contact-details">
                 <div className="profile-image">
                   <img src={require('./assets/pic1.jpeg')} alt="Profile" />
                 </div>
                 <p>
                   <i className="fas fa-envelope"></i>
-                  <a href="mailto:aayush.chaudhari1607@gmail.com">aayush.chaudhari1607@gmail.com</a>
+                  <a className="links" href="mailto:aayush.chaudhari1607@gmail.com">aayush.chaudhari1607@gmail.com</a>
                 </p>
                 <p>
                   <i className="fab fa-github"></i>
-                  <a href="https://github.com/aayushhh-operator" target="_blank" rel="noopener noreferrer">
+                  <a className="links" href="https://github.com/aayushhh-operator" target="_blank" rel="noopener noreferrer">
                     github.com/aayushhh-operator
                   </a>
                 </p>
                 <p>
                   <i className="fab fa-linkedin"></i>
-                  <a href="https://www.linkedin.com/in/aayush-chaudhari/" target="_blank" rel="noopener noreferrer">
+                  <a className="links" href="https://www.linkedin.com/in/aayush-chaudhari/" target="_blank" rel="noopener noreferrer">
                     www.linkedin.com/in/aayush-chaudhari/
                   </a>
                 </p>
