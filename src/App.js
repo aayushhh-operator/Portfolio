@@ -68,6 +68,7 @@ function App() {
               </a>
             </li>
             <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>About Me</a></li>
+            <li><a href="#experience" onClick={(e) => scrollToSection(e, 'experience')}>Experience</a></li>
             <li><a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a></li>
             <li><a href="#achievements" onClick={(e) => scrollToSection(e, 'achievements')}>Achievements</a></li>
             <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
