@@ -165,7 +165,19 @@ section {
   margin: 0 auto;
 }
 
-
+.about h2,
+.skills h2,
+.projects h2,
+.resume h2,
+.contact h2 {
+  font-family: 'WakandaPanther';
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  letter-spacing: 2px;
+}
 
 .about p {
   font-size: 1.1rem;
