@@ -3,6 +3,7 @@ import './App.css';
 import DecryptedText from './components/DecryptedText';
 import CustomCursor from './components/CustomCursor';
 import ShinyText from './components/ShinyText';
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [animationKey, setAnimationKey] = useState(0);
@@ -10,6 +11,14 @@ function App() {
   const emailRef = React.createRef();
   const phoneRef = React.createRef();
   const messageRef = React.createRef();
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [sending, setSending] = useState(false);
+  const [buttonText, setButtonText] = useState('Send Message');
 
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
@@ -30,26 +39,30 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
 
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const phone = phoneRef.current.value;
-    const message = messageRef.current.value;
-
-    const recipientPhone = '+918830466403'; // Your phone number
-    const smsBody = `From: ${name} (${email})\n\nMessage:\n${message}`;
-
-    const smsLink = `sms:${recipientPhone}?body=${encodeURIComponent(smsBody)}`;
-
-    window.location.href = smsLink;
-
-    // Optionally clear the form after submission
-    nameRef.current.value = '';
-    emailRef.current.value = '';
-    phoneRef.current.value = '';
-    messageRef.current.value = '';
+  const handleEmailJSSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setButtonText('Sending...');
+    emailjs.send(
+      'service_cfgdao2',
+      'template_c4rdfiq',
+      formData,
+      'SKCOA7bd54hJtWw3a'
+    )
+      .then((result) => {
+        setButtonText('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setButtonText('Send Message'), 5000);
+      }, (error) => {
+        setButtonText('Failed to send. Try again.');
+        setTimeout(() => setButtonText('Send Message'), 5000);
+      })
+      .finally(() => setSending(false));
   };
 
   return (
@@ -376,23 +389,9 @@ function App() {
           </div>
         </section>
 
-        <section id="resume" className="resume">
-          <ShinyText text="Resume" speed={4} />
-          <div className="resume-container">
-            <a 
-              href="https://drive.google.com/file/d/1T4tKKTA4FhzKv2WLEtF30TkhGvsg4gFn/view?usp=drive_link" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="resume-btn"
-            >
-              View Resume
-            </a>
-          </div>
-        </section>
-
         <section id="contact" className="contact">
           <ShinyText text="Get in Touch" speed={4} />
-            <div className="contact-info">
+            <div className="contact-info-row">
               <div className="contact-details">
                 <div className="profile-image">
                   <img src={require('./assets/pic1.jpeg')} alt="Profile" />
@@ -409,11 +408,51 @@ function App() {
                 </p>
                 <p>
                   <i className="fab fa-linkedin"></i>
-                  <a className="links" href="https://www.linkedin.com/in/aayush-chaudhari/" target="_blank" rel="noopener noreferrer">
-                    www.linkedin.com/in/aayush-chaudhari/
+                  <a className="links" href="https://www.linkedin.com/in/aayush-chaudhari" target="_blank" rel="noopener noreferrer">
+                    www.linkedin.com/in/aayush-chaudhari
                   </a>
                 </p>
                 <p><i className="fas fa-phone"></i> +91 8830466403</p>
+              </div>
+              <div className="contact-form-container">
+                <form className="contact-form" onSubmit={handleEmailJSSubmit}>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Your Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Your Phone Number"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    pattern="[0-9]{10,15}"
+                    required
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                  />
+                  <button type="submit" className="contact-btn" disabled={sending}>
+                    {sending && <span className="spinner"></span>}
+                    {buttonText}
+                  </button>
+                </form>
               </div>
             </div>
         </section>
