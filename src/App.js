@@ -226,6 +226,10 @@ function App() {
                   <img src={require('./assets/transfer_learning.jpg')} alt="Transfer Learning" />
                   <span>Transfer Learning</span>
                 </div>
+                <div className="skill-item">
+                  <img src={require('./assets/ocr.png')} alt="OCR" />
+                  <span>OCR</span>
+                </div>
               </div>
             </div>
 
