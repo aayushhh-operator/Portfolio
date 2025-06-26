@@ -256,6 +256,10 @@ function App() {
                   <img src={require('./assets/flask.png')} alt="Flask" />
                   <span>Flask</span>
                 </div>
+                <div className="skill-item">
+                  <img src={require('./assets/yolo.png')} alt="YOLO" />
+                  <span>YOLO</span>
+                </div>
               </div>
             </div>
           </div>
