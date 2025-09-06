@@ -133,7 +133,7 @@ function App() {
                 <div className="about-section">
                   <div className="about-content">
                     <div className="about-text">
-                      <p>Hey, I'm Aayush Chaudhari — currently decoding life (and data) at Dwarkadas J. Sanghvi College of Engineering, where I'm pursuing a BTech in Computer Science and Engineering (Data Science). I speak fluent Python, occasionally dream in SQL, and can summon AI/ML models like a tech wizard.</p>
+                      <p>Hey, I'm Aayush Chaudhari, currently decoding life (and data) at Dwarkadas J. Sanghvi College of Engineering, where I'm pursuing a BTech in Computer Science and Engineering (Data Science). I speak fluent Python, occasionally dream in SQL, and can summon AI/ML models like a tech wizard.</p>
                     </div>
                     <div className="about-image">
                       <img src={require('./assets/pic4.jpeg')} alt="para1" />
@@ -147,7 +147,7 @@ function App() {
                       <img src={require('./assets/pic3.jpeg')} alt="para2" />
                     </div>
                     <div className="about-text">
-                      <p>I'm big on hackathons — nothing beats the rush of building cool stuff in 24 hours with zero sleep and way too much coffee. Turns out, my habit of staying up late isn't just chaos — it's my edge. While the world crashes, I'm wide awake, debugging at 3 AM and vibing my way to working prototypes.</p>
+                      <p>I'm big on hackathons, nothing beats the rush of building cool stuff in 24 hours with zero sleep and way too much coffee. Turns out, my habit of staying up late isn't just chaos, it's my edge. While the world crashes, I'm wide awake, debugging at 3 AM and vibing my way to working prototypes.</p>
                     </div>
                   </div>
                 </div>
