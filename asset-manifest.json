@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.a13eb72d.css",
-    "main.js": "/static/js/main.84a1f1b8.js",
-    "static/media/pic7.jpeg": "/static/media/pic7.cf1c28d97592c2309381.jpeg",
-    "static/media/pic3.jpeg": "/static/media/pic3.2535f4ab5eed8a3a949d.jpeg",
-    "static/media/pic1.jpeg": "/static/media/pic1.ff8e869d08e58325d0ce.jpeg",
-    "static/media/pic4.jpeg": "/static/media/pic4.7eb93a3dda85eeb35808.jpeg",
-    "static/media/output-onlinepngtools.png": "/static/media/output-onlinepngtools.da579c8368711180b5fb.png",
-    "static/media/pic8.jpg": "/static/media/pic8.4a71b4b0fd654e6393e2.jpg",
-    "static/media/hugging_face.png": "/static/media/hugging_face.396762820c8973893745.png",
-    "static/media/roboflow.png": "/static/media/roboflow.bfd49158cef9eebcdd95.png",
-    "static/media/data_analysis.png": "/static/media/data_analysis.6c90dc55776947a51639.png",
-    "static/media/scikit_learn.png": "/static/media/scikit_learn.2b25788e04776fff8bfd.png",
-    "static/media/deep_learning.png": "/static/media/deep_learning.46a1fefc260b8829fcdd.png",
-    "static/media/autocad.png": "/static/media/autocad.5b6bceebbbc2b947d147.png",
-    "static/media/PantheraRegular-MVZ9J.ttf": "/static/media/PantheraRegular-MVZ9J.f5aba428704d7a0cfa95.ttf",
-    "static/media/tableau.png": "/static/media/tableau.de497e3cf9de36673eff.png",
-    "static/media/pointer.cur": "/static/media/pointer.42d46b2e010144d8dfb9.cur",
-    "static/media/WakandaPantherNmdVerRegular-p7qRr.ttf": "/static/media/WakandaPantherNmdVerRegular-p7qRr.4eacf50164914c2bcd40.ttf",
-    "index.html": "/index.html",
-    "main.a13eb72d.css.map": "/static/css/main.a13eb72d.css.map",
-    "main.84a1f1b8.js.map": "/static/js/main.84a1f1b8.js.map"
+    "main.css": "/Portfolio/static/css/main.18969743.css",
+    "main.js": "/Portfolio/static/js/main.d7645fbe.js",
+    "static/media/pic7.jpeg": "/Portfolio/static/media/pic7.cf1c28d97592c2309381.jpeg",
+    "static/media/pic3.jpeg": "/Portfolio/static/media/pic3.2535f4ab5eed8a3a949d.jpeg",
+    "static/media/pic1.jpeg": "/Portfolio/static/media/pic1.ff8e869d08e58325d0ce.jpeg",
+    "static/media/pic4.jpeg": "/Portfolio/static/media/pic4.7eb93a3dda85eeb35808.jpeg",
+    "static/media/output-onlinepngtools.png": "/Portfolio/static/media/output-onlinepngtools.da579c8368711180b5fb.png",
+    "static/media/pic8.jpg": "/Portfolio/static/media/pic8.4a71b4b0fd654e6393e2.jpg",
+    "static/media/hugging_face.png": "/Portfolio/static/media/hugging_face.396762820c8973893745.png",
+    "static/media/roboflow.png": "/Portfolio/static/media/roboflow.bfd49158cef9eebcdd95.png",
+    "static/media/data_analysis.png": "/Portfolio/static/media/data_analysis.6c90dc55776947a51639.png",
+    "static/media/scikit_learn.png": "/Portfolio/static/media/scikit_learn.2b25788e04776fff8bfd.png",
+    "static/media/deep_learning.png": "/Portfolio/static/media/deep_learning.46a1fefc260b8829fcdd.png",
+    "static/media/autocad.png": "/Portfolio/static/media/autocad.5b6bceebbbc2b947d147.png",
+    "static/media/PantheraRegular-MVZ9J.ttf": "/Portfolio/static/media/PantheraRegular-MVZ9J.f5aba428704d7a0cfa95.ttf",
+    "static/media/tableau.png": "/Portfolio/static/media/tableau.de497e3cf9de36673eff.png",
+    "static/media/pointer.cur": "/Portfolio/static/media/pointer.42d46b2e010144d8dfb9.cur",
+    "static/media/WakandaPantherNmdVerRegular-p7qRr.ttf": "/Portfolio/static/media/WakandaPantherNmdVerRegular-p7qRr.4eacf50164914c2bcd40.ttf",
+    "index.html": "/Portfolio/index.html",
+    "main.18969743.css.map": "/Portfolio/static/css/main.18969743.css.map",
+    "main.d7645fbe.js.map": "/Portfolio/static/js/main.d7645fbe.js.map"
   },
   "entrypoints": [
-    "static/css/main.a13eb72d.css",
-    "static/js/main.84a1f1b8.js"
+    "static/css/main.18969743.css",
+    "static/js/main.d7645fbe.js"
   ]
 }
