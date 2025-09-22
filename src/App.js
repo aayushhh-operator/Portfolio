@@ -49,24 +49,18 @@ function App() {
     e.preventDefault();
     setSending(true);
     setButtonText('Sending...');
-    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_cfgdao2';
-    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_c4rdfiq';
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'SKCOA7bd54hJtWw3a';
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 
     // Map to common EmailJS template variable names; adjust to match your template
     const templateParams = {
-      from_name: formData.name,
-      reply_to: (formData.email || '').toLowerCase(),
+      name: formData.name,
+      email: (formData.email || '').toLowerCase(),
       phone: formData.phone,
       message: formData.message,
     };
 
-    emailjs.send(
-      serviceId,
-      templateId,
-      templateParams,
-      { publicKey }
-    )
+    emailjs.send(serviceId, templateId, templateParams)
       .then((result) => {
         setButtonText('Message sent successfully!');
         setFormData({ name: '', email: '', phone: '', message: '' });
