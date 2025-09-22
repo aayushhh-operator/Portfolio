@@ -3,13 +3,20 @@ import './App.css';
 import DecryptedText from './components/DecryptedText';
 import CustomCursor from './components/CustomCursor';
 import ShinyText from './components/ShinyText';
+import SplashScreen from './components/SplashScreen';
+import emailjs from '@emailjs/browser';
 
 function App() {
   const [animationKey, setAnimationKey] = useState(0);
-  const nameRef = React.createRef();
-  const emailRef = React.createRef();
-  const phoneRef = React.createRef();
-  const messageRef = React.createRef();
+  const [showSplash, setShowSplash] = useState(true);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [sending, setSending] = useState(false);
+  const [buttonText, setButtonText] = useState('Send Message');
 
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
@@ -21,39 +28,66 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY === 0) {
+      if (window.scrollY === 0 && !showSplash) {
         setAnimationKey(prev => prev + 1);
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [showSplash]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const phone = phoneRef.current.value;
-    const message = messageRef.current.value;
+  const handleEmailJSSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setButtonText('Sending...');
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_cfgdao2';
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || 'template_c4rdfiq';
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || 'SKCOA7bd54hJtWw3a';
 
-    const recipientPhone = '+918830466403'; // Your phone number
-    const smsBody = `From: ${name} (${email})\n\nMessage:\n${message}`;
+    // Map to common EmailJS template variable names; adjust to match your template
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: (formData.email || '').toLowerCase(),
+      phone: formData.phone,
+      message: formData.message,
+    };
 
-    const smsLink = `sms:${recipientPhone}?body=${encodeURIComponent(smsBody)}`;
+    emailjs.send(
+      serviceId,
+      templateId,
+      templateParams,
+      { publicKey }
+    )
+      .then((result) => {
+        setButtonText('Message sent successfully!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        setTimeout(() => setButtonText('Send Message'), 5000);
+      }, (error) => {
+        console.error('EmailJS error:', error);
+        setButtonText('Failed to send. Try again.');
+        setTimeout(() => setButtonText('Send Message'), 5000);
+      })
+      .finally(() => setSending(false));
+  };
 
-    window.location.href = smsLink;
-
-    // Optionally clear the form after submission
-    nameRef.current.value = '';
-    emailRef.current.value = '';
-    phoneRef.current.value = '';
-    messageRef.current.value = '';
+  const handleSplashFinish = () => {
+    setShowSplash(false);
+    // Trigger the decrypted text animations after splash screen finishes
+    setAnimationKey(prev => prev + 1);
   };
 
   return (
     <div className="app">
+      {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
       <CustomCursor />
       <header className="header">
         <nav className="nav">
@@ -115,7 +149,7 @@ function App() {
             <div className="about-section">
               <div className="about-content">
                 <div className="about-text">
-                  <p>Hey, I'm Aayush Chaudhari — currently decoding life (and data) at Dwarkadas J. Sanghvi College of Engineering, where I'm pursuing a BTech in Computer Science and Engineering (Data Science). I speak fluent Python, occasionally dream in SQL, and can summon AI/ML models like a tech wizard.</p>
+                  <p>Hey, I'm Aayush Chaudhari, currently decoding life (and data) at Dwarkadas J. Sanghvi College of Engineering, where I'm pursuing a BTech in Computer Science and Engineering (Data Science). I speak fluent Python, occasionally dream in SQL, and can summon AI/ML models like a tech wizard.</p>
                 </div>
                 <div className="about-image">
                   <img src={require('./assets/pic4.jpeg')} alt="para1" />
@@ -129,7 +163,7 @@ function App() {
                   <img src={require('./assets/pic3.jpeg')} alt="para2" />
                 </div>
                 <div className="about-text">
-                  <p>I'm big on hackathons — nothing beats the rush of building cool stuff in 24 hours with zero sleep and way too much coffee. Turns out, my habit of staying up late isn't just chaos — it's my edge. While the world crashes, I'm wide awake, debugging at 3 AM and vibing my way to working prototypes.</p>
+                  <p>I'm big on hackathons, nothing beats the rush of building cool stuff in 24 hours with zero sleep and way too much coffee. Turns out, my habit of staying up late isn't just chaos, it's my edge. While the world crashes, I'm wide awake, debugging at 3 AM and vibing my way to working prototypes.</p>
                 </div>
               </div>
             </div>
@@ -376,22 +410,9 @@ function App() {
           </div>
         </section>
 
-        <section id="resume" className="resume">
-          <ShinyText text="Resume" speed={4} />
-          <div className="resume-container">
-            <a 
-              href="https://drive.google.com/file/d/1T4tKKTA4FhzKv2WLEtF30TkhGvsg4gFn/view?usp=drive_link" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="resume-btn"
-            >
-              View Resume
-            </a>
-          </div>
-        </section>
-
         <section id="contact" className="contact">
           <ShinyText text="Get in Touch" speed={4} />
+          <div className="contact-container">
             <div className="contact-info">
               <div className="contact-details">
                 <div className="profile-image">
@@ -416,6 +437,48 @@ function App() {
                 <p><i className="fas fa-phone"></i> +91 8830466403</p>
               </div>
             </div>
+            
+            <div className="contact-form-container">
+              <form className="contact-form" onSubmit={handleEmailJSSubmit}>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  pattern="[0-9]{10,15}"
+                  required
+                />
+                <textarea
+                  name="message"
+                  placeholder="Your Message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
+                />
+                <button type="submit" className="contact-btn" disabled={sending}>
+                  {sending && <span className="spinner"></span>}
+                  {buttonText}
+                </button>
+              </form>
+            </div>
+          </div>
         </section>
         <p className="made-by">Made By Aayush🤖</p>
       </main>
