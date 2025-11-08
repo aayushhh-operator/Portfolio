@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import DecryptedText from './components/DecryptedText';
-import CustomCursor from './components/CustomCursor';
 import ShinyText from './components/ShinyText';
 import SplashScreen from './components/SplashScreen';
 import emailjs from '@emailjs/browser';
@@ -82,12 +81,11 @@ function App() {
   return (
     <div className="app">
       {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
-      <CustomCursor />
       <header className="header">
         <nav className="nav">
           <ul className="nav-links">
             <li>
-              <a href="#"
+              <a href="#top"
                 onClick={(e) => {
                   e.preventDefault();
                   window.scrollTo({ top: 0, behavior: 'smooth' });
