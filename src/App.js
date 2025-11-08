@@ -100,7 +100,7 @@ function App() {
             <li><a href="#skills" onClick={(e) => scrollToSection(e, 'skills')}>Skills</a></li>
             <li><a href="#achievements" onClick={(e) => scrollToSection(e, 'achievements')}>Achievements</a></li>
             <li><a href="#projects" onClick={(e) => scrollToSection(e, 'projects')}>Projects</a></li>
-            <li><a href="https://drive.google.com/file/d/1T4tKKTA4FhzKv2WLEtF30TkhGvsg4gFn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a></li>
+            <li><a href="https://drive.google.com/file/d/1WQpiXOXiXf-MfCMpr-KFQizRBEn8-j1m/view?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a></li>
           </ul>
         </nav>
       </header>
@@ -398,6 +398,30 @@ function App() {
                 <div className="card-back">
                   <p>AI Driven Similar Clothing Detection Application</p>
                   <a className="links" href='https://github.com/aayushhh-operator/WardrobeMirror' target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="card-inner">
+                <div className="card-front">
+                  <h3>Attendance Management System</h3>
+                </div>
+                <div className="card-back">
+                  <p>Java and Springboot Based Attendance Management System</p>
+                  <a className="links" href='https://github.com/aayushhh-operator/Attendance-Management' target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="card-inner">
+                <div className="card-front">
+                  <h3>F1 Data Analysis</h3>
+                </div>
+                <div className="card-back">
+                  <p>Used Readily available F1 data and analzed the data using PySpark and PowerBI</p>
+                  <a className="links" href='https://github.com/aayushhh-operator/F1-Data-Analysis' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
             </div>
