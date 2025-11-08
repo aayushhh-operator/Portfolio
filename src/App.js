@@ -406,7 +406,7 @@ function App() {
                   <h3>Attendance Management System</h3>
                 </div>
                 <div className="card-back">
-                  <p>Java and Springboot Based Attendance Management System</p>
+                  <p>Java Based Attendance Management System</p>
                   <a className="links" href='https://github.com/aayushhh-operator/Attendance-Management' target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
               </div>
