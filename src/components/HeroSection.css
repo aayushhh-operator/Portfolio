@@ -1,0 +1,167 @@
+@keyframes pulseOpacity {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../assets/output-onlinepngtools.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation: pulseOpacity 3.1s ease-in-out infinite;
+}
+
+.hero-content {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: 'Panthera';
+    letter-spacing: 2px;
+}
+
+.hero-image {
+    display: none;
+}
+
+.hero-content .name {
+    font-family: 'Panthera';
+    font-size: 6rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    width: 100%;
+}
+
+.hero-content .name.encrypted {
+    color: #6300a8;
+    text-shadow: 0 0 10px rgba(99, 0, 168, 0.5);
+}
+
+.hero-content .subtitle {
+    font-family: 'Panthera';
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.hero-content .subtitle.encrypted {
+    color: #6300a8;
+    text-shadow: 0 0 10px rgba(99, 0, 168, 0.5);
+}
+
+.hero-content .description {
+    font-family: 'WakandaPanther';
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 1.5rem 0;
+    max-width: 600px;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 2px solid #6300a8;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 20px rgba(99, 0, 168, 0.3),
+        0 0 40px rgba(99, 0, 168, 0.2),
+        0 0 60px rgba(99, 0, 168, 0.1);
+    background: linear-gradient(45deg, rgba(99, 0, 168, 0.1), rgba(99, 0, 168, 0.2));
+    backdrop-filter: blur(5px);
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(45deg, #6300a8, #8a2be2);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.contact-btn:hover {
+    color: white;
+    box-shadow: 0 0 30px rgba(99, 0, 168, 0.4),
+        0 0 60px rgba(99, 0, 168, 0.3),
+        0 0 90px rgba(99, 0, 168, 0.2);
+    transform: translateY(-2px);
+}
+
+.contact-btn:hover::before {
+    width: 100%;
+}

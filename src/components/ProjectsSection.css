@@ -1,0 +1,195 @@
+.projects {
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects h2 {
+    font-family: 'WakandaPanther';
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-card {
+    perspective: 2000px;
+    height: 300px;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 20px rgba(99, 0, 168, 0.2);
+    border-radius: 15px;
+    will-change: transform;
+}
+
+.project-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.card-front {
+    background: linear-gradient(135deg, rgba(99, 0, 168, 0.1), rgba(0, 0, 0, 0.8));
+    border: 1px solid rgba(99, 0, 168, 0.3);
+}
+
+.card-back {
+    flex-direction: column;
+    background: linear-gradient(135deg,
+            rgba(0, 0, 0, 0.95) 0%,
+            rgba(99, 0, 168, 0.2) 50%,
+            rgba(0, 0, 0, 0.95) 100%);
+    border: 1px solid rgba(99, 0, 168, 0.3);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.card-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg,
+            rgba(99, 0, 168, 0.1) 0%,
+            transparent 20%,
+            transparent 80%,
+            rgba(99, 0, 168, 0.1) 100%);
+    pointer-events: none;
+}
+
+.card-back p {
+    font-family: sans-serif;
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-shadow: 0 0 10px rgba(99, 0, 168, 0.3);
+    margin: 0;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.card-back::-webkit-scrollbar {
+    width: 8px;
+}
+
+.card-back::-webkit-scrollbar-track {
+    background: rgba(99, 0, 168, 0.1);
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.card-back::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,
+            rgba(99, 0, 168, 0.3),
+            rgba(99, 0, 168, 0.5));
+    border-radius: 4px;
+    border: 2px solid rgba(99, 0, 168, 0.1);
+    box-shadow: 0 0 10px rgba(99, 0, 168, 0.2);
+}
+
+.card-back::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg,
+            rgba(99, 0, 168, 0.5),
+            rgba(99, 0, 168, 0.7));
+}
+
+/* Add a subtle border glow */
+.card-back {
+    box-shadow:
+        0 0 20px rgba(99, 0, 168, 0.1),
+        inset 0 0 20px rgba(99, 0, 168, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.card-back:hover {
+    box-shadow:
+        0 0 30px rgba(99, 0, 168, 0.2),
+        inset 0 0 30px rgba(99, 0, 168, 0.2);
+}
+
+.card-front h3 {
+    font-family: sans-serif;
+    color: #e2e8f0;
+    font-size: 1.5rem;
+    text-shadow: 0 0 10px rgba(99, 0, 168, 0.5);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.card-front::before,
+.card-back::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(99, 0, 168, 0.1), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+    pointer-events: none;
+}
+
+.card-front:hover::before,
+.card-back:hover::before {
+    transform: translateX(100%);
+}
+
+.card-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(99, 0, 168, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover .card-inner::after {
+    opacity: 1;
+}
+
+.links {
+    color: white;
+}
