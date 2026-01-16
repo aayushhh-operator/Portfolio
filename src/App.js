@@ -19,19 +19,24 @@ function App() {
 
   return (
     <div className="app">
-      {showSplash && <SplashScreen onFinish={handleSplashFinish} />}
-      <NavBar />
+      {showSplash ? (
+        <SplashScreen onFinish={handleSplashFinish} />
+      ) : (
+        <>
+          <NavBar />
 
-      <main className="main-content">
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <SkillsSection />
-        <AchievementsSection />
-        <ProjectsSection />
-        <ContactSection />
-        <p className="made-by">Made By Aayush🤖</p>
-      </main>
+          <main className="main-content">
+            <HeroSection />
+            <AboutSection />
+            <ExperienceSection />
+            <SkillsSection />
+            <AchievementsSection />
+            <ProjectsSection />
+            <ContactSection />
+            <p className="made-by">Made By Aayush🤖</p>
+          </main>
+        </>
+      )}
     </div>
   );
 }
