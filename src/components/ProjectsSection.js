@@ -79,6 +79,19 @@ const ProjectsSection = () => {
                         </div>
                     </div>
                 </div>
+
+                <div className="project-card">
+                    <div className="card-inner">
+                        <div className="card-front">
+                            <h3>AutoMend AI</h3>
+                        </div>
+                        <div className="card-back">
+                            <p>AI Driven Self-Healing Code Agent</p>
+                            <a className="links" href='https://github.com/aayushhh-operator/Self-Healing-Agent' target="_blank" rel="noopener noreferrer">GitHub</a>
+                            <a className="links" href='https://self-healing-agent.streamlit.app/' target="_blank" rel="noopener noreferrer">Demo</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );
